@@ -10,8 +10,8 @@ Scenario: Sign in and receive a token
 
 @Positive_flow
 Scenario Outline: Create a class
-	When teacher creates a class with "<classname>" classname, "<subject_1>" subject_1, "<subject_2>" subject_2 and "<subject_3>" subject_3.
-	Then validate that the class is successfully created "<message>".
+	When teacher creates a class with {string} classname, {string} subject_1, {string} subject_2 and {string} subject_3.
+	Then validate class is created {string}.
 
 Examples:
 	| classname | subject_1 | subject_2 | subject_3  | message       |
@@ -20,8 +20,8 @@ Examples:
 
 @Positive_flow
 Scenario Outline: Add the stuednt to a class
-	When teacher adds the student with "<name>" name and "<class_id>" class id.
-	Then validate that the student is successfully added "<message>".
+	When the teacher adds student with {string} name and {string} class id.
+	Then validate that student is successfully added {string}.
 
 Examples:
 	| name     | class_id                             | message       |
@@ -31,7 +31,7 @@ Examples:
 
 @Positive_flow
 Scenario: Add and update grade
-	When teacher adds this grade: "3", to student: "2164e5a5-8c01-40e4-9210-6f38476cdd2a", in subject: "Biologic".
-	Then validate that the grade is successfully added to the student "Grade added".
-	And teacher updates the grade to "6".
-	And validate that the grade is successfully updated "Grade updated".
+	When teacher adds this grade: {string}, to this student: {string}, in this subject: {string}.
+	Then validate that grade is added to student {string}.
+	And teacher update grade to {string}.
+	And validate that grade is updated {string}.
