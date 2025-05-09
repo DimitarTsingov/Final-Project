@@ -10,8 +10,8 @@ Scenario: Sign in and receive a token
 
 @Positive_flow
 Scenario: Create user
-	When admin creates a user with "<username>" username, "<password>" password, and "<role>" role.
-	Then validate user is created. "created successfully" 
+	When admin creates a user with {string} username, {string} password, and {string} role.
+	Then validate user is created. {string}. 
 
 Examples:
 	| title              | username		| password  | role      | 
@@ -21,13 +21,13 @@ Examples:
 
 @Negative_flow
 Scenario: Try to create user that already exists
-	When admin tries to create an existing user with "Dimitar" username, "teacher11" password, and "teacher" role.
-	Then validate that the user is already created.
+	When admin try to create an existing user with "Dimitar" username, "teacher11" password, and "teacher" role.
+	Then validate user is already created.
 
 
 @Positive_flow
 Scenario: Connecting a parent to the student
 	When admin connects a parent "parent1" to student with id: "43bac5dc-ecba-4826-8b8d-204cecd07b18".
-	Then validate that the parent is connected to the student "Parent linked to student".
+	Then validate parent is connected to student {string}.
     
 
