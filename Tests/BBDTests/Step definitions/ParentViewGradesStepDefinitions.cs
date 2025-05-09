@@ -23,7 +23,7 @@ namespace BackEndAutomation
             _extractResponseData = extractResponseData;
             _test = scenarioContext.Get<ExtentTest>("ExtentTest");
         }
-        [When("parent view grades of student with id: {string}.")]
+        [When("parent views the grades of a student with id: {string}.")]
         public void ParentViewGrades_(string student_id)
         {
             _test.Info($"Parent is attempting to view grades for student with ID: {student_id}.");
@@ -40,7 +40,7 @@ namespace BackEndAutomation
             _test.Pass($"Grades were successfully retrieved for student ID: {student_id}. Extracted grades: {allGrades}.");
         }
 
-        [Then("validate grades are visible.")]
+        [Then("validate that the grades are displayed.")]
         public void ValidateGradesAreVisible_()
         {
             string allGrades = _scenarioContext.Get<string>("AllGrades");
@@ -55,7 +55,7 @@ namespace BackEndAutomation
             _test.Pass($"Validation successful: The grades are visible for the student. Grades: {allGrades}.");
         }
 
-        [Then("validate student id is invalid {string}.")]
+        [Then("validate that the student id is not valid {string}.")]
         public void ValidateStudentIdIsInvalid_(string expectedMessage)
         {
             string actualMessage = _scenarioContext.Get<string>("Detail");
@@ -69,7 +69,7 @@ namespace BackEndAutomation
             _test.Pass($"Validation was successful: The system correctly handled the invalid student ID. Message: {expectedMessage}.");
         }
 
-        [Then("validate student is not linked to parent {string}.")]
+        [Then("validate that the student is not linked to a parent {string}.")]
         public void ThenValidateStudentIsNotLinkedToParent_(string expectedMessage)
         {
             string actualMessage = _scenarioContext.Get<string>("Detail");
