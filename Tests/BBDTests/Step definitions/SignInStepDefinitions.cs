@@ -38,7 +38,7 @@ namespace BackEndAutomation
             _test.Pass($"User '{username}' was successfully signed in. Access token was retrieved.");
         }
 
-        [Then("validate that the user is signed in.")]
+        [Then("verify that the user is signed in.")]
         public void ValidateUserIsSignedIn_()
         {
             string username = _scenarioContext.Get<string>("Username");
