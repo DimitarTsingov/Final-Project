@@ -101,3 +101,4 @@ During test execution, several functional bugs were discovered in the School API
 ---
 
 > ⚠️ This project is intended for **educational and demo purposes** and assumes access to the API with the required permissions.
+
